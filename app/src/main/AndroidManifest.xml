@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.prototypea">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.PrototypeA"
+        tools:targetApi="31">
+        <activity
+            android:name=".image_viewer"
+            android:exported="false"
+            android:theme="@style/popup_theme" />
+        <activity
+            android:name=".video_assinment"
+            android:exported="false"
+            android:theme="@style/popup_theme" />
+        <activity android:name=".player_2x2_grid"
+            android:exported="false"/>
+        <activity
+            android:name=".video_player"
+            android:exported="false"
+            android:theme="@style/popup_theme" />
+        <activity
+            android:name=".join_grids"
+            android:exported="false" />
+        <!--
+             TODO: Before you run your application, you need a Google Maps API key.
+
+             To get one, follow the directions here:
+
+                https://developers.google.com/maps/documentation/android-sdk/get-api-key
+
+             Once you have your API key (it starts with "AIza"), define a new property in your
+             project's local.properties file (e.g. MAPS_API_KEY=Aiza...), and replace the
+             "YOUR_API_KEY" string in this file with "${MAPS_API_KEY}".
+        -->
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="" />
+
+        <activity
+            android:name=".get_location"
+            android:exported="false"
+            android:label="@string/title_activity_get_location" />
+        <activity
+            android:name=".assigment_photo"
+            android:exported="false"
+            android:theme="@style/popup_theme" />
+        <activity
+            android:name=".grid_2x2_asignments"
+            android:exported="false" />
+        <activity
+            android:name=".test_screen_2"
+            android:exported="false" />
+        <activity
+            android:name=".admin_2x2_grid"
+            android:exported="false" />
+        <activity
+            android:name=".grid_player_select"
+            android:exported="false"
+            android:theme="@style/popup_theme" />
+        <activity
+            android:name=".test_screen"
+            android:exported="false" />
+        <activity
+            android:name=".newgrid_2x2"
+            android:exported="false" />
+        <activity
+            android:name=".create_grids_start"
+            android:exported="false" />
+        <activity
+            android:name=".My_account"
+            android:exported="false" />
+        <activity
+            android:name=".home"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".newgridoption"
+            android:theme="@style/popup_theme" />
+        <activity
+            android:name=".view_grids_page"
+            android:exported="false" />
+    </application>
+
+</manifest>

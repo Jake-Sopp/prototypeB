@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name='app_theme' parent="Theme.AppCompat.Light.DarkActionBar">
+
+    </style>
+
+    <style name='popup_theme'>
+        <item name='android:windowIsTranslucent'>true</item>
+        <item name='android:windowCloseOnTouchOutside'>true</item>
+    </style>
+</resources>

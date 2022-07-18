@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+        <string-array name="Grid_sizes">
+            <item>2*2</item>
+            <item>2*3</item>
+            <item>2*4</item>
+            <item>2*5</item>
+        </string-array>
+        <string-array name="Image_select">
+            <item>rowlet</item>
+            <item>door</item>
+            <item>camera</item>
+        </string-array>
+</resources>
