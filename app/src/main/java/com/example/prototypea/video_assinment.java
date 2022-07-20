@@ -84,5 +84,7 @@ public class video_assinment extends Activity {
                 smeditor.commit();
             }
         }
+        setResult(RESULT_OK);
+        finish();
     }
 }

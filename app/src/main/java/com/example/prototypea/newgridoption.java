@@ -22,9 +22,6 @@ public class newgridoption extends Activity {
         int width = dm.widthPixels;
         int height=dm.heightPixels;
         getWindow().setLayout((int)(width*.8),(int)(height*.6));
-
-
-
         Button photo =findViewById(R.id.photo_config);
         photo.setOnClickListener(new View.OnClickListener() {
             @Override

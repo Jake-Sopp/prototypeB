@@ -17,6 +17,7 @@ import android.widget.TextView;
 import org.w3c.dom.Text;
 
 public class grid_2x2_asignments extends AppCompatActivity {
+    TextView test;
     String object;
     ImageButton asignment1x1;
     ImageButton asignment2x1;
@@ -36,7 +37,8 @@ public class grid_2x2_asignments extends AppCompatActivity {
         asignment2x1 = findViewById(R.id.asigment2x1);
         asignment1x2 = findViewById(R.id.asginment1x2);
         asignment2x2 = findViewById(R.id.asigment2x2);
-        imagestart(asignment1x1, asignment2x1, asignment1x2, asignment2x2);
+        test=findViewById(R.id.select_values);
+        imagestart();
         asignment1x1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -68,7 +70,7 @@ public class grid_2x2_asignments extends AppCompatActivity {
     }
 
 
-    protected void imagestart(ImageButton asignment1x1, ImageButton asignment2x1, ImageButton asignment1x2, ImageButton asignment2x2) {
+    protected void imagestart() {
         asignment1x1.setBackgroundResource(sp.getInt("bg1x1", 0));
         asignment2x1.setBackgroundResource(sp.getInt("bg2x1", 0));
         asignment1x2.setBackgroundResource(sp.getInt("bg1x2", 0));
@@ -78,21 +80,30 @@ public class grid_2x2_asignments extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK) {
-            String imageStr = sp.getString("photo_change", "");
-            Bitmap image = StringToBitMap(imageStr);
-            BitmapDrawable ob = new BitmapDrawable(getResources(), image);
-            //object="bg1x1";
-            if (object == "bg1x1") {
-                asignment1x1.setBackground(ob);
+            if (requestCode==1) {
+                String imageStr = sp.getString("photo_change", "");
+                Bitmap image = StringToBitMap(imageStr);
+                BitmapDrawable ob = new BitmapDrawable(getResources(), image);
+                //object="bg1x1";
+                if (object == "bg1x1") {
+                    asignment1x1.setBackground(ob);
+                }
+                if (object == "bg2x1") {
+                    asignment2x1.setBackground(ob);
+                }
+                if (object == "bg1x2") {
+                    asignment1x2.setBackground(ob);
+                }
+                if (object == "bg2x2") {
+                    asignment2x2.setBackground(ob);
+                }
             }
-            if (object == "bg2x1") {
-                asignment2x1.setBackground(ob);
+            if (requestCode==2){
+                test.setText("gps");
+
             }
-            if (object == "bg1x2") {
-                asignment1x2.setBackground(ob);
-            }
-            if (object == "bg2x2") {
-                asignment2x2.setBackground(ob);
+            if(requestCode==3){
+                test.setText("video");
             }
         }
     }
@@ -110,12 +121,12 @@ public class grid_2x2_asignments extends AppCompatActivity {
         if (type.equals("gps")){
             Intent i = new Intent(this, get_location.class);
             i.putExtra("key", object);
-            startActivityForResult(i, 1);
+            startActivityForResult(i, 2);
         }
         if (type.equals("video")){
             Intent i = new Intent(this, video_assinment.class);
             i.putExtra("key", object);
-            startActivityForResult(i, 1);
+            startActivityForResult(i, 3);
         }
     }
     public Bitmap StringToBitMap(String encodedString) {

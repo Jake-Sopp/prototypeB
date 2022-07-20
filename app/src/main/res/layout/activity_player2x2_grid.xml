@@ -8,11 +8,10 @@
 
     <ImageButton
         android:id="@+id/complate_1x1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="32dp"
-        android:contentDescription="@string/Welcome"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="SpeakableTextPresentCheck"
@@ -20,33 +19,30 @@
 
     <ImageButton
         android:id="@+id/complate_2x1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="36dp"
-        android:contentDescription="@string/Welcome"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
 
     <ImageButton
         android:id="@+id/complate_1x2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_marginStart="28dp"
         android:layout_marginBottom="248dp"
-        android:contentDescription="@string/account_message"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
 
     <ImageButton
         android:id="@+id/complate_2x2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="248dp"
-        android:contentDescription="@string/Welcome"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
