@@ -18,6 +18,7 @@ public class home extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
+        requestPermission();
         Button Create_grid_button = (Button) findViewById(R.id.create_grids);
         Create_grid_button.setOnClickListener(new View.OnClickListener() {
             @Override

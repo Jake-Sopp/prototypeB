@@ -2,41 +2,50 @@ package com.example.prototypea;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
-import android.app.Activity;
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.tasks.OnSuccessListener;
+
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
+import android.location.Location;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Base64;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.TextView;
 
 import java.io.ByteArrayOutputStream;
 
 public class player_2x2_grid extends AppCompatActivity {
     SharedPreferences sp, sm;
+    private FusedLocationProviderClient client;
     private static final int CAMERA_REQUEST = 1888;
-    private static final int VIDEO_REQUSET = 1333;
-    private static final int MAP_REQUEST=1222;
+    private static final int VIDEO_REQUEST = 1333;
+    private static final int MAP_REQUEST = 1222;
     ImageButton bg1x1;
     ImageButton bg1x2;
     ImageButton bg2x1;
     ImageButton bg2x2;
-    String object;
-    String type;
+    String object, type, player;
     SharedPreferences.Editor smEditor;
+    String answer = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_player2x2_grid);
+        client = LocationServices.getFusedLocationProviderClient(this);
+
+        player = "p1";
         sp = getSharedPreferences("Grid_assigments", Context.MODE_PRIVATE);
         sm = getSharedPreferences("completion", Context.MODE_PRIVATE);
-        smEditor=sm.edit();
+        smEditor = sm.edit();
         bg1x1 = findViewById(R.id.complate_1x1);
         bg1x2 = findViewById(R.id.complate_1x2);
         bg2x1 = findViewById(R.id.complate_2x1);
@@ -46,7 +55,6 @@ public class player_2x2_grid extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 object = "bg1x1";
-                complete();
             }
         });
         bg2x1.setOnClickListener(new View.OnClickListener() {
@@ -87,35 +95,45 @@ public class player_2x2_grid extends AppCompatActivity {
             startActivityForResult(intent, CAMERA_REQUEST);
         }
         if (type.equals("gps")) {
-            Intent intent = new Intent(this, get_location.class);
-            startActivityForResult(intent, MAP_REQUEST);
+            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                return;
+            }
+            client.getLastLocation()
+                    .addOnSuccessListener(this, new OnSuccessListener<Location>() {
+                        @Override
+                        public void onSuccess(Location location) {
+                            if (location != null) {
+                                String locat = location.toString();
+                                String lat = locat.substring(15,24);
+                                String longi = locat.substring(25,34);
+                                answer = lat+" "+longi;
+                                smEditor.putString(player+object+"answer",answer);
+                                smEditor.commit();
+                            }
+                        }
+                    });
+
         }
         if (type.equals("video")) {
             Intent intent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
-            startActivityForResult(intent, VIDEO_REQUSET);
+            startActivityForResult(intent, VIDEO_REQUEST);
         }
     }
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        String answer="0";
         if (resultCode == RESULT_OK) {
             if (requestCode == CAMERA_REQUEST) {
-                //String imageStr = sp.getString("photo_change", "");
-                //Bitmap image = StringToBitMap(imageStr);
-                //BitmapDrawable ob = new BitmapDrawable(getResources(), image);
-                //object="bg1x1";
                 answer=BitMapToString((Bitmap)(data.getExtras().get("data")));
-
             }
-            if (requestCode==VIDEO_REQUSET){
+            if (requestCode== VIDEO_REQUEST){
                 answer=data.getData().toString();
             }
             if(requestCode==MAP_REQUEST){
 
             }
         }
-        smEditor.putString(object+"answer",answer);
+        smEditor.putString(player+object+"answer",answer);
         smEditor.commit();
     }
     public String BitMapToString(@NonNull Bitmap bitmap){
