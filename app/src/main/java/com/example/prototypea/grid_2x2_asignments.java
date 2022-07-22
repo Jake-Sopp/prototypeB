@@ -111,7 +111,6 @@ public class grid_2x2_asignments extends AppCompatActivity {
         String object_type = object+"type";
         TextView test=findViewById(R.id.select_values);
         type=sp.getString(object_type,"test");
-        //test.setText(type);
         smeditor.putString(object_type,type);
         if (type.equals("photo")){
             Intent i = new Intent(this, assigment_photo.class);
