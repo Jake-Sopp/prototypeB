@@ -55,6 +55,7 @@ public class player_2x2_grid extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 object = "bg1x1";
+                complete();
             }
         });
         bg2x1.setOnClickListener(new View.OnClickListener() {
@@ -115,7 +116,7 @@ public class player_2x2_grid extends AppCompatActivity {
 
         }
         if (type.equals("video")) {
-            Intent intent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
+            Intent intent = new Intent(this, video_player.class);
             startActivityForResult(intent, VIDEO_REQUEST);
         }
     }
@@ -144,3 +145,4 @@ public class player_2x2_grid extends AppCompatActivity {
         return temp;
     }
 }
+//do you pledge obliagance to the bees

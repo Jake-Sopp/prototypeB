@@ -24,15 +24,17 @@ public class grid_2x2_asignments extends AppCompatActivity {
     ImageButton asignment1x2;
     ImageButton asignment2x2;
     String type;
-    SharedPreferences sp,sm;
-    SharedPreferences.Editor smeditor;
+    SharedPreferences sp,sm,im;
+    SharedPreferences.Editor smeditor,imageeditor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grid2x2_asignments);
         sp = getSharedPreferences("Grid_assigments", Context.MODE_PRIVATE);
         sm = getSharedPreferences("assigned_values", Context.MODE_PRIVATE);
+        im=getSharedPreferences("grid_image",Context.MODE_PRIVATE);
         smeditor=sm.edit();
+        imageeditor=im.edit();
         asignment1x1 = findViewById(R.id.asigment1x1);
         asignment2x1 = findViewById(R.id.asigment2x1);
         asignment1x2 = findViewById(R.id.asginment1x2);
@@ -81,8 +83,8 @@ public class grid_2x2_asignments extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK) {
             if (requestCode==1) {
-                String imageStr = sp.getString("photo_change", "");
-                Bitmap image = StringToBitMap(imageStr);
+                String value = sp.getString("photo_change", "");
+                Bitmap image = StringToBitMap(value);
                 BitmapDrawable ob = new BitmapDrawable(getResources(), image);
                 //object="bg1x1";
                 if (object == "bg1x1") {
@@ -97,14 +99,17 @@ public class grid_2x2_asignments extends AppCompatActivity {
                 if (object == "bg2x2") {
                     asignment2x2.setBackground(ob);
                 }
+                smeditor.putString(object+"item",value);
+                imageeditor.putString(object+"image",value);
             }
             if (requestCode==2){
-                test.setText("gps");
 
             }
             if(requestCode==3){
                 test.setText("video");
             }
+            smeditor.commit();
+            imageeditor.commit();
         }
     }
     private void assigments() {
