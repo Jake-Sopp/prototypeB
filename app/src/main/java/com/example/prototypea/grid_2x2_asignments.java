@@ -8,6 +8,7 @@ import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Base64;
 import android.view.View;
@@ -15,6 +16,8 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
+
+import java.net.URI;
 
 public class grid_2x2_asignments extends AppCompatActivity {
     TextView test;
@@ -106,7 +109,9 @@ public class grid_2x2_asignments extends AppCompatActivity {
 
             }
             if(requestCode==3){
-                test.setText("video");
+                Uri imageUri = data.getData();
+                smeditor.putString(object+"image",imageUri.toString());
+
             }
             smeditor.commit();
             imageeditor.commit();

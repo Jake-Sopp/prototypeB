@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "101649538630",
+    "project_id": "testing-grid-app",
+    "storage_bucket": "testing-grid-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:101649538630:android:1e6cde7ada60a84b7a7447",
+        "android_client_info": {
+          "package_name": "com.example.prototypea"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "101649538630-cc59vq9gb7o3i9i7macj73bkfapslln4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARU9PXTdqXo6UqscjTc86KfofsOe3Y5AE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "101649538630-cc59vq9gb7o3i9i7macj73bkfapslln4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

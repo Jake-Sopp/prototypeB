@@ -37,7 +37,7 @@ android {
         }
     }
 }
-
+//apply plugin:'com.google.gms.google-services'
 dependencies {
     implementation 'com.google.firebase:firebase-analytics'
     implementation platform('com.google.firebase:firebase-bom:30.3.1')
