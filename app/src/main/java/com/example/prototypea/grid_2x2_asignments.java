@@ -1,5 +1,6 @@
 package com.example.prototypea;
 
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
@@ -110,8 +111,10 @@ public class grid_2x2_asignments extends AppCompatActivity {
             }
             if(requestCode==3){
                 Uri imageUri = data.getData();
-                smeditor.putString(object+"image",imageUri.toString());
-
+                smeditor.putString(object+"item",imageUri.toString());
+                Intent j = new Intent(grid_2x2_asignments.this,custom_icon.class);
+                j.putExtra("key",object);
+                startActivity(j);
             }
             smeditor.commit();
             imageeditor.commit();

@@ -17,8 +17,12 @@
         android:theme="@style/Theme.PrototypeA"
         tools:targetApi="31">
         <activity
-            android:name=".custom_icon"
+            android:name=".grid_compleation"
             android:exported="false" />
+        <activity
+            android:name=".custom_icon"
+            android:exported="false"
+            android:theme="@style/popup_theme" />
         <activity
             android:name=".photo_check"
             android:exported="false" />
