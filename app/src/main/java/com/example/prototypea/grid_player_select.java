@@ -28,3 +28,4 @@ public class grid_player_select extends Activity {
         });
     }
 }
+// TODO make it show number of players in grid

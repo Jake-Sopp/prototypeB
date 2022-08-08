@@ -39,7 +39,7 @@ public class home extends AppCompatActivity {
         most_recent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(home.this, grid_compleation.class);
+                Intent intent = new Intent(home.this, get_location.class);
                 startActivity(intent);
             }
         });

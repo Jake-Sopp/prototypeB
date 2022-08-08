@@ -1,5 +1,6 @@
 package com.example.prototypea;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentActivity;
 
 import android.os.Bundle;
@@ -20,15 +21,21 @@ public class get_location extends FragmentActivity implements OnMapReadyCallback
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
         binding = ActivityGetLocationBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+        /*mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
+            @Override
+            public void onMapClick(@NonNull LatLng latLng) {
+                LatLng sydney = latLng;
+                mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
+                mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+            }
+        });*/
     }
-
     /**
      * Manipulates the map once available.
      * This callback is triggered when the map is ready to be used.
@@ -44,7 +51,8 @@ public class get_location extends FragmentActivity implements OnMapReadyCallback
 
         // Add a marker in Sydney and move the camera
         LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
+        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney").draggable(true));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
     }
 }
+//TODO get maps working on jakes phone

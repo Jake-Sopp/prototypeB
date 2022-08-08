@@ -13,6 +13,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Base64;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -22,14 +23,11 @@ import java.net.URI;
 
 public class grid_2x2_asignments extends AppCompatActivity {
     TextView test;
-    String object;
-    ImageButton asignment1x1;
-    ImageButton asignment2x1;
-    ImageButton asignment1x2;
-    ImageButton asignment2x2;
-    String type;
+    String object,type;
+    ImageButton asignment1x1,asignment2x1,asignment1x2,asignment2x2;
     SharedPreferences sp,sm,im;
     SharedPreferences.Editor smeditor,imageeditor;
+    Button next;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +41,7 @@ public class grid_2x2_asignments extends AppCompatActivity {
         asignment2x1 = findViewById(R.id.asigment2x1);
         asignment1x2 = findViewById(R.id.asginment1x2);
         asignment2x2 = findViewById(R.id.asigment2x2);
-        test=findViewById(R.id.select_values);
+        next=findViewById(R.id.assigment_finish);
         imagestart();
         asignment1x1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,6 +69,13 @@ public class grid_2x2_asignments extends AppCompatActivity {
             public void onClick(View v) {
                 object="bg2x2";
                 assigments();
+            }
+        });
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(grid_2x2_asignments.this,grid_compleation.class);
+                startActivity(i);
             }
         });
     }
@@ -106,15 +111,10 @@ public class grid_2x2_asignments extends AppCompatActivity {
                 smeditor.putString(object+"item",value);
                 imageeditor.putString(object+"image",value);
             }
-            if (requestCode==2){
-
-            }
-            if(requestCode==3){
-                Uri imageUri = data.getData();
-                smeditor.putString(object+"item",imageUri.toString());
+            if (requestCode==2 || requestCode==3){
                 Intent j = new Intent(grid_2x2_asignments.this,custom_icon.class);
                 j.putExtra("key",object);
-                startActivity(j);
+                startActivityForResult(j,10);
             }
             smeditor.commit();
             imageeditor.commit();
@@ -152,3 +152,4 @@ public class grid_2x2_asignments extends AppCompatActivity {
         }
     }
 }
+//TODO fix crash with custom icon activity

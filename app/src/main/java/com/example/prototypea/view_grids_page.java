@@ -12,3 +12,4 @@ public class view_grids_page extends AppCompatActivity {
         setContentView(R.layout.activity_view_grids);
     }
 }
+/*TODO: get open a grid using values from a database*/

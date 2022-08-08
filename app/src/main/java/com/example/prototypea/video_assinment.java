@@ -85,6 +85,6 @@ public class video_assinment extends Activity {
             }
         }
         setResult(RESULT_OK);
-        finish();
+        //finish();
     }
 }

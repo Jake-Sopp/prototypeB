@@ -68,11 +68,11 @@
         android:textSize="34sp" />
 
     <Button
-        android:id="@+id/assognment_finish"
+        android:id="@+id/assigment_finish"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="54dp"
-        android:text="Button" />
+        android:text="next" />
 </RelativeLayout>
