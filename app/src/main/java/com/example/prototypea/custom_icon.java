@@ -37,7 +37,6 @@ public class custom_icon extends Activity {
         getWindow().setLayout((int)(width*.8),(int)(height*.6));
         Bundle bundle = getIntent().getExtras();
         object=bundle.getString("key");
-        //object= getIntent().getStringExtra("key");
         sp=getSharedPreferences("grid_image", Context.MODE_PRIVATE);
         gal=1;
         camimg=2;

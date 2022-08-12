@@ -39,7 +39,7 @@ public class home extends AppCompatActivity {
         most_recent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(home.this, get_location.class);
+                Intent intent = new Intent(home.this, video_player.class);
                 startActivity(intent);
             }
         });
@@ -48,6 +48,14 @@ public class home extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(home.this, view_grids_page.class);
+                startActivity(intent);
+            }
+        });
+        Button join_grids=findViewById(R.id.join_grids);
+        join_grids.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(home.this, join_grids.class);
                 startActivity(intent);
             }
         });

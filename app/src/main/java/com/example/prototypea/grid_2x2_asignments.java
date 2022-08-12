@@ -32,6 +32,7 @@ public class grid_2x2_asignments extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grid2x2_asignments);
+        test=findViewById(R.id.select_values);
         sp = getSharedPreferences("Grid_assigments", Context.MODE_PRIVATE);
         sm = getSharedPreferences("assigned_values", Context.MODE_PRIVATE);
         im=getSharedPreferences("grid_image",Context.MODE_PRIVATE);
@@ -112,9 +113,11 @@ public class grid_2x2_asignments extends AppCompatActivity {
                 imageeditor.putString(object+"image",value);
             }
             if (requestCode==2 || requestCode==3){
-                Intent j = new Intent(grid_2x2_asignments.this,custom_icon.class);
-                j.putExtra("key",object);
-                startActivityForResult(j,10);
+                String testa=sm.getString(object+"assignment","dave");
+                test.setText(testa);
+                //Intent j = new Intent(grid_2x2_asignments.this,custom_icon.class);
+                //j.putExtra("key",object);
+                //startActivityForResult(j,10);
             }
             smeditor.commit();
             imageeditor.commit();

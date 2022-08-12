@@ -14,7 +14,7 @@ import android.widget.VideoView;
 
 public class video_player extends Activity {
     VideoView video;
-    Button start,stop,back,gallery;
+    Button start,stop,back,complate;
     int SELECT_PICTURE = 200;
     Uri imageUri;
     @Override
@@ -30,7 +30,7 @@ public class video_player extends Activity {
         start=findViewById(R.id.video_start);
         stop=findViewById(R.id.video_restart);
         back=findViewById(R.id.video_back);
-        gallery=findViewById(R.id.item_gallery);
+        complate=findViewById(R.id.complate_video);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -49,10 +49,11 @@ public class video_player extends Activity {
                 video.pause();
             }
         });
-        gallery.setOnClickListener(new View.OnClickListener() {
+        complate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                choosevideofromgllary();
+                Intent i = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
+                startActivity(i);
             }
         });
     }
@@ -66,10 +67,5 @@ public class video_player extends Activity {
                 }
             }
         }
-    }
-    public void choosevideofromgllary(){
-        Intent gallereryIntent=new Intent(Intent.ACTION_PICK, MediaStore.Video.Media.EXTERNAL_CONTENT_URI);
-        gallereryIntent.setType("video/*");
-        startActivityForResult(gallereryIntent, SELECT_PICTURE);
     }
 }
