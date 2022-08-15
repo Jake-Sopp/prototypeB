@@ -39,7 +39,7 @@ public class home extends AppCompatActivity {
         most_recent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(home.this, video_player.class);
+                Intent intent = new Intent(home.this, player_2x2_grid.class);
                 startActivity(intent);
             }
         });

@@ -5,12 +5,14 @@
       <map>
         <entry key="..\:/Users/user/AndroidStudioProjects/prototypeA/app/src/main/res/drawable/grid2x2button.xml" value="0.22" />
         <entry key="..\:/Users/user/AndroidStudioProjects/prototypeA/app/src/main/res/drawable/round_button.xml" value="0.1" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/prototypeA/app/src/main/res/layout/activity_account_deleteion_sucess.xml" value="0.1" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/prototypeA/app/src/main/res/layout/activity_account_deletion.xml" value="0.2" />
         <entry key="..\:/Users/user/AndroidStudioProjects/prototypeA/app/src/main/res/layout/activity_admin2x2_grid.xml" value="0.22" />
         <entry key="..\:/Users/user/AndroidStudioProjects/prototypeA/app/src/main/res/layout/activity_admin_grid2x2.xml" value="0.15" />
         <entry key="..\:/Users/user/AndroidStudioProjects/prototypeA/app/src/main/res/layout/activity_assigment_photo.xml" value="0.2" />
         <entry key="..\:/Users/user/AndroidStudioProjects/prototypeA/app/src/main/res/layout/activity_assigment_popup.xml" value="0.1" />
         <entry key="..\:/Users/user/AndroidStudioProjects/prototypeA/app/src/main/res/layout/activity_create_grids_start.xml" value="0.25" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/prototypeA/app/src/main/res/layout/activity_custom_icon.xml" value="0.25" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/prototypeA/app/src/main/res/layout/activity_custom_icon.xml" value="0.22" />
         <entry key="..\:/Users/user/AndroidStudioProjects/prototypeA/app/src/main/res/layout/activity_get_location.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/user/AndroidStudioProjects/prototypeA/app/src/main/res/layout/activity_grid2x2.xml" value="0.22" />
         <entry key="..\:/Users/user/AndroidStudioProjects/prototypeA/app/src/main/res/layout/activity_grid2x2_asignments.xml" value="0.15" />
@@ -18,11 +20,14 @@
         <entry key="..\:/Users/user/AndroidStudioProjects/prototypeA/app/src/main/res/layout/activity_grid_player_select.xml" value="0.1" />
         <entry key="..\:/Users/user/AndroidStudioProjects/prototypeA/app/src/main/res/layout/activity_image_viewer.xml" value="0.10778985507246377" />
         <entry key="..\:/Users/user/AndroidStudioProjects/prototypeA/app/src/main/res/layout/activity_join_grids.xml" value="0.22580645161290322" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/prototypeA/app/src/main/res/layout/activity_lable_add.xml" value="0.21" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/prototypeA/app/src/main/res/layout/activity_location_view.xml" value="0.11367753623188406" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/prototypeA/app/src/main/res/layout/activity_login_main.xml" value="0.16032608695652173" />
         <entry key="..\:/Users/user/AndroidStudioProjects/prototypeA/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/user/AndroidStudioProjects/prototypeA/app/src/main/res/layout/activity_my_account.xml" value="0.22" />
         <entry key="..\:/Users/user/AndroidStudioProjects/prototypeA/app/src/main/res/layout/activity_newgrid2x2.xml" value="0.25" />
         <entry key="..\:/Users/user/AndroidStudioProjects/prototypeA/app/src/main/res/layout/activity_photo_check.xml" value="0.33" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/prototypeA/app/src/main/res/layout/activity_player2x2_grid.xml" value="0.1" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/prototypeA/app/src/main/res/layout/activity_player2x2_grid.xml" value="0.18" />
         <entry key="..\:/Users/user/AndroidStudioProjects/prototypeA/app/src/main/res/layout/activity_player_grid2x2.xml" value="0.14175724637681159" />
         <entry key="..\:/Users/user/AndroidStudioProjects/prototypeA/app/src/main/res/layout/activity_test_screen.xml" value="0.19631901840490798" />
         <entry key="..\:/Users/user/AndroidStudioProjects/prototypeA/app/src/main/res/layout/activity_test_screen2.xml" value="0.25" />

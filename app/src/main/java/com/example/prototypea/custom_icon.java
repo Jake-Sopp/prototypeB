@@ -1,23 +1,24 @@
 package com.example.prototypea;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Base64;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 
 public class custom_icon extends Activity {
     Button photo,gallery,confirm;
@@ -26,6 +27,7 @@ public class custom_icon extends Activity {
     int gal,camimg;
     SharedPreferences sp;
     SharedPreferences.Editor speditor;
+    EditText lable_View;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,11 +39,12 @@ public class custom_icon extends Activity {
         getWindow().setLayout((int)(width*.8),(int)(height*.6));
         Bundle bundle = getIntent().getExtras();
         object=bundle.getString("key");
-        sp=getSharedPreferences("grid_image", Context.MODE_PRIVATE);
+        sp=getSharedPreferences("grid_lable", Context.MODE_PRIVATE);
         gal=1;
         camimg=2;
         speditor=sp.edit();
         imageview=findViewById(R.id.image);
+        lable_View =findViewById(R.id.icon_grid_lable);
         confirm=findViewById(R.id.icon_selection_confirm);
         photo=findViewById(R.id.icon_selection_camera);
         gallery=findViewById(R.id.icon_selection_galleary);
@@ -63,6 +66,9 @@ public class custom_icon extends Activity {
         confirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String lable=lable_View.getText().toString();
+                speditor.putString(object+"lable_View",lable);
+                speditor.commit();
                 finish();
             }
         });
@@ -74,6 +80,19 @@ public class custom_icon extends Activity {
                 Bitmap image = (Bitmap) data.getExtras().get("data");
                 imageview.setImageBitmap(image);
                 String convered_image = BitMapToString(image);
+                speditor.putString(object+"image",convered_image);
+                speditor.commit();
+            }
+            if (requestCode==gal){
+                Uri imageUri = data.getData();
+                Bitmap bitmap = null;
+                try {
+                    bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), imageUri);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                imageview.setImageBitmap(bitmap);
+                String convered_image = BitMapToString(bitmap);
                 speditor.putString(object+"image",convered_image);
                 speditor.commit();
             }

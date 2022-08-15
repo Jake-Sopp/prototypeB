@@ -72,7 +72,8 @@ public class video_assinment extends Activity {
                 if (null != Videouri) {
                     test.setVideoURI(Videouri);
                     test.start();
-                    smeditor.putString(object+"assignment", Videouri.toString());
+                    String uristring=Videouri.toString();
+                    smeditor.putString(object+"assignment", uristring);
                     smeditor.commit();
                    }
              }
@@ -80,7 +81,8 @@ public class video_assinment extends Activity {
                 Videouri = data.getData();
                 test.setVideoURI(Videouri);
                 test.start();
-                smeditor.putString(object+"assignment", Videouri.toString());
+                String uristring=Videouri.toString();
+                smeditor.putString(object+"assignment",uristring);
                 smeditor.commit();
             }
         }

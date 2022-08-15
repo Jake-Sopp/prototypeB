@@ -73,6 +73,15 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="54dp"
+        android:layout_marginBottom="33dp"
         android:text="next" />
+
+    <Switch
+        android:id="@+id/icon_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="104dp"
+        android:text="icon/lable mode" />
 </RelativeLayout>

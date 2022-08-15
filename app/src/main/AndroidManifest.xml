@@ -17,74 +17,120 @@
         android:theme="@style/Theme.PrototypeA"
         tools:targetApi="31">
         <activity
-            android:name=".grid_compleation"
-            android:exported="false" />
-        <activity
-            android:name=".custom_icon"
+            android:name=".lable_add"
             android:exported="false"
-            android:theme="@style/popup_theme" />
-        <activity
-            android:name=".photo_check"
-            android:exported="false" />
-        <activity
-            android:name=".image_viewer"
-            android:exported="false"
-            android:theme="@style/popup_theme" />
-        <activity
-            android:name=".video_assinment"
-            android:exported="false"
-            android:theme="@style/popup_theme" />
-        <activity
-            android:name=".player_2x2_grid"
-            android:exported="false" />
-        <activity
-            android:name=".video_player"
-            android:exported="false"
-            android:theme="@style/popup_theme" />
-        <activity
-            android:name=".join_grids"
-            android:exported="false" />
-        //TODO replace map id when given
+            android:screenOrientation="portrait"/>
+        <!--
+             TODO: Before you run your application, you need a Google Maps API key.
+
+             To get one, follow the directions here:
+
+                https://developers.google.com/maps/documentation/android-sdk/get-api-key
+
+             Once you have your API key (it starts with "AIza"), define a new property in your
+             project's local.properties file (e.g. MAPS_API_KEY=Aiza...), and replace the
+             "YOUR_API_KEY" string in this file with "${MAPS_API_KEY}".
+        -->
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyDYkfGeg6drgb0K-iKM8EFI2lwfqTjyP8o" />
 
         <activity
+            android:name=".Location_View"
+            android:exported="false"
+            android:label="@string/title_activity_location_view"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".account_deleteion_sucess"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Account_deletion"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".grid_compleation"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".custom_icon"
+            android:exported="false"
+            android:theme="@style/popup_theme"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".photo_check"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".image_viewer"
+            android:exported="false"
+            android:theme="@style/popup_theme"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".video_assinment"
+            android:exported="false"
+            android:theme="@style/popup_theme"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".player_2x2_grid"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".video_player"
+            android:exported="false"
+            android:theme="@style/popup_theme"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".join_grids"
+            android:exported="false" android:screenOrientation="portrait" />
+
+        <activity
             android:name=".get_location"
             android:exported="false"
-            android:label="@string/title_activity_get_location" />
+            android:label="@string/title_activity_get_location"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".assigment_photo"
             android:exported="false"
-            android:theme="@style/popup_theme" />
+            android:theme="@style/popup_theme"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".grid_2x2_asignments"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".test_screen_2"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".admin_2x2_grid"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".grid_player_select"
             android:exported="false"
-            android:theme="@style/popup_theme" />
+            android:theme="@style/popup_theme"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".test_screen"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".newgrid_2x2"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".create_grids_start"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".My_account"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".home"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -93,10 +139,12 @@
         </activity>
         <activity
             android:name=".newgridoption"
-            android:theme="@style/popup_theme" />
+            android:theme="@style/popup_theme"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".view_grids_page"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

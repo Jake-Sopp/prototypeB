@@ -15,6 +15,7 @@ import android.util.Base64;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -28,6 +29,7 @@ public class grid_2x2_asignments extends AppCompatActivity {
     SharedPreferences sp,sm,im;
     SharedPreferences.Editor smeditor,imageeditor;
     Button next;
+    Switch lable_switch;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +45,7 @@ public class grid_2x2_asignments extends AppCompatActivity {
         asignment1x2 = findViewById(R.id.asginment1x2);
         asignment2x2 = findViewById(R.id.asigment2x2);
         next=findViewById(R.id.assigment_finish);
+        lable_switch=findViewById(R.id.icon_switch);
         imagestart();
         asignment1x1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -115,9 +118,9 @@ public class grid_2x2_asignments extends AppCompatActivity {
             if (requestCode==2 || requestCode==3){
                 String testa=sm.getString(object+"assignment","dave");
                 test.setText(testa);
-                //Intent j = new Intent(grid_2x2_asignments.this,custom_icon.class);
-                //j.putExtra("key",object);
-                //startActivityForResult(j,10);
+                Intent j = new Intent(grid_2x2_asignments.this,custom_icon.class);
+                j.putExtra("key",object);
+                startActivityForResult(j,10);
             }
             smeditor.commit();
             imageeditor.commit();
@@ -128,20 +131,27 @@ public class grid_2x2_asignments extends AppCompatActivity {
         TextView test=findViewById(R.id.select_values);
         type=sp.getString(object_type,"test");
         smeditor.putString(object_type,type);
-        if (type.equals("photo")){
-            Intent i = new Intent(this, assigment_photo.class);
-            i.putExtra("key", object);
-            startActivityForResult(i, 1);
+        if (lable_switch.isChecked()==true){
+            Intent j = new Intent(grid_2x2_asignments.this,custom_icon.class);
+            j.putExtra("key",object);
+            startActivityForResult(j,10);
         }
-        if (type.equals("gps")){
-            Intent i = new Intent(this, get_location.class);
-            i.putExtra("key", object);
-            startActivityForResult(i, 2);
-        }
-        if (type.equals("video")){
-            Intent i = new Intent(this, video_assinment.class);
-            i.putExtra("key", object);
-            startActivityForResult(i, 3);
+        else {
+            if (type.equals("photo")) {
+                Intent i = new Intent(this, assigment_photo.class);
+                i.putExtra("key", object);
+                startActivityForResult(i, 1);
+            }
+            if (type.equals("gps")) {
+                Intent i = new Intent(this, get_location.class);
+                i.putExtra("key", object);
+                startActivityForResult(i, 2);
+            }
+            if (type.equals("video")) {
+                Intent i = new Intent(this, video_assinment.class);
+                i.putExtra("key", object);
+                startActivityForResult(i, 3);
+            }
         }
     }
     public Bitmap StringToBitMap(String encodedString) {
@@ -155,4 +165,3 @@ public class grid_2x2_asignments extends AppCompatActivity {
         }
     }
 }
-//TODO fix crash with custom icon activity

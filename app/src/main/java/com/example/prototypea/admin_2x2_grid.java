@@ -8,9 +8,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 public class admin_2x2_grid extends Activity {
     ImageButton admin1x1,admin2x2,admin1x2,admin2x1;
+    TextView code_page;
     Button playerlist;
     SharedPreferences sp;
     String value;
@@ -23,6 +25,7 @@ public class admin_2x2_grid extends Activity {
         admin2x1=findViewById(R.id.admingrid_2x1);
         admin1x2=findViewById(R.id.admingrid_1x2);
         admin2x2=findViewById(R.id.admingrid_2x2);
+        code_page=findViewById(R.id.Code_admin);
         update();
         playerlist = findViewById(R.id.playerlist_1);
         playerlist.setOnClickListener(new View.OnClickListener() {
@@ -39,5 +42,6 @@ public class admin_2x2_grid extends Activity {
         admin2x1.setImageResource(sp.getInt("bg2x1",0));
         admin1x2.setImageResource(sp.getInt("bg1x2",0));
         admin2x2.setImageResource(sp.getInt("bg2x2",0));
+        code_page.setText(sp.getString("bg2x1"+"assignment","dave"));
     }
 }

@@ -14,25 +14,25 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.location.Location;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Base64;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 import java.io.ByteArrayOutputStream;
 
 public class player_2x2_grid extends AppCompatActivity {
-    SharedPreferences sp, sm;
+    SharedPreferences sp, sm,lable;
     private FusedLocationProviderClient client;
     private static final int CAMERA_REQUEST = 1888;
     private static final int VIDEO_REQUEST = 1333;
     private static final int MAP_REQUEST = 1222;
-    ImageButton bg1x1;
-    ImageButton bg1x2;
-    ImageButton bg2x1;
-    ImageButton bg2x2;
+    ImageButton bg1x1,bg1x2,bg2x1,bg2x2;
+    Button back;
     String object, type, player;
     SharedPreferences.Editor smEditor;
     String answer = "";
@@ -41,11 +41,12 @@ public class player_2x2_grid extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_player2x2_grid);
         client = LocationServices.getFusedLocationProviderClient(this);
-
+        lable=getSharedPreferences("grid_lable",Context.MODE_PRIVATE);
         player = "p1";
         sp = getSharedPreferences("Grid_assigments", Context.MODE_PRIVATE);
         sm = getSharedPreferences("completion", Context.MODE_PRIVATE);
         smEditor = sm.edit();
+        back=findViewById(R.id.player_2x2_back);
         bg1x1 = findViewById(R.id.complate_1x1);
         bg1x2 = findViewById(R.id.complate_1x2);
         bg2x1 = findViewById(R.id.complate_2x1);
@@ -79,44 +80,38 @@ public class player_2x2_grid extends AppCompatActivity {
                 complete();
             }
         });
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
     private void setimage() {
-        bg1x1.setBackgroundResource(sp.getInt("bg1x1", 0));
-        bg2x1.setBackgroundResource(sp.getInt("bg2x1", 0));
-        bg1x2.setBackgroundResource(sp.getInt("bg1x2", 0));
-        bg2x2.setBackgroundResource(sp.getInt("bg2x2", 0));
+        bg1x1.setImageBitmap(StringToBitMap(lable.getString("bg1x1image","test")));
+        bg2x1.setImageBitmap(StringToBitMap(lable.getString("bg2x1image","test")));
+        bg1x2.setImageBitmap(StringToBitMap(lable.getString("bg1x2image","test")));
+        bg2x2.setImageBitmap(StringToBitMap(lable.getString("bg2x2image","test")));
     }
 
     private void complete() {
         String object_type = object + "type";
         type = sp.getString(object_type, "test");
         if (type.equals("photo")) {
-            Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            Intent intent = new Intent(this,image_viewer.class);
+            intent.putExtra("key", object );
             startActivityForResult(intent, CAMERA_REQUEST);
         }
         if (type.equals("gps")) {
-            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-                return;
+            Intent intent = new Intent(this,Location_View.class);
+            intent.putExtra("key", object );
+            startActivity(intent);
             }
-            client.getLastLocation()
-                    .addOnSuccessListener(this, new OnSuccessListener<Location>() {
-                        @Override
-                        public void onSuccess(Location location) {
-                            if (location != null) {
-                                String locat = location.toString();
-                                String lat = locat.substring(15,24);
-                                String longi = locat.substring(25,34);
-                                answer = lat+" "+longi;
-                                smEditor.putString(player+object+"answer",answer);
-                                smEditor.commit();
-                            }
-                        }
-                    });
 
-        }
         if (type.equals("video")) {
             Intent intent = new Intent(this, video_player.class);
+            intent.putExtra("key", object );
             startActivityForResult(intent, VIDEO_REQUEST);
         }
     }
@@ -130,9 +125,6 @@ public class player_2x2_grid extends AppCompatActivity {
             if (requestCode== VIDEO_REQUEST){
                 answer=data.getData().toString();
             }
-            if(requestCode==MAP_REQUEST){
-
-            }
         }
         smEditor.putString(player+object+"answer",answer);
         smEditor.commit();
@@ -144,5 +136,15 @@ public class player_2x2_grid extends AppCompatActivity {
         String temp= Base64.encodeToString(b, Base64.DEFAULT);
         return temp;
     }
+    public Bitmap StringToBitMap(String encodedString){
+        try {
+            byte [] encodeByte=Base64.decode(encodedString,Base64.DEFAULT);
+            Bitmap bitmap= BitmapFactory.decodeByteArray(encodeByte, 0, encodeByte.length);
+            return bitmap;
+        } catch(Exception e) {
+            e.getMessage();
+            return null;
+        }
+    }
 }
-//do you pledge obliagance to the bees
+//TODO resize image
