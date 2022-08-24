@@ -2,7 +2,9 @@ package com.example.prototypea;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,12 +15,17 @@ public class grid_compleation extends AppCompatActivity {
     TextView view;
     String code;
     Button complate,friends;
+    SharedPreferences sp;
+    SharedPreferences.Editor spEditor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grid_compleation);
+        sp = getSharedPreferences("Grid_assigments", Context.MODE_PRIVATE);
         view = findViewById(R.id.random_code);
         code=String.valueOf(string_gen());
+        spEditor.putString("code",code);
+        spEditor.commit();
         complate=findViewById(R.id.complate_code);
         complate.setOnClickListener(new View.OnClickListener() {
             @Override

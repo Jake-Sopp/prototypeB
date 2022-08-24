@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.prototypea">
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
@@ -148,3 +149,4 @@
     </application>
 
 </manifest>
+    <!-- TODO, add download feature(in works,URL modle created), fix any bugs, add datebase, add login,change methods in all assignment and answer to use database when implemented,add other sizes,method to reset grid-->

@@ -89,10 +89,13 @@ public class player_2x2_grid extends AppCompatActivity {
     }
 
     private void setimage() {
+        Bitmap test = StringToBitMap(lable.getString("bg1x1image","test"));
         bg1x1.setImageBitmap(StringToBitMap(lable.getString("bg1x1image","test")));
         bg2x1.setImageBitmap(StringToBitMap(lable.getString("bg2x1image","test")));
         bg1x2.setImageBitmap(StringToBitMap(lable.getString("bg1x2image","test")));
         bg2x2.setImageBitmap(StringToBitMap(lable.getString("bg2x2image","test")));
+        Bitmap resized = Bitmap.createScaledBitmap(test,150, 150, true);
+
     }
 
     private void complete() {
@@ -147,4 +150,4 @@ public class player_2x2_grid extends AppCompatActivity {
         }
     }
 }
-//TODO resize image
+//TODO resize image/set diffalt image to something

@@ -42,6 +42,6 @@ public class admin_2x2_grid extends Activity {
         admin2x1.setImageResource(sp.getInt("bg2x1",0));
         admin1x2.setImageResource(sp.getInt("bg1x2",0));
         admin2x2.setImageResource(sp.getInt("bg2x2",0));
-        code_page.setText(sp.getString("bg2x1"+"assignment","dave"));
+        code_page.setText(sp.getString("code","dave"));
     }
 }

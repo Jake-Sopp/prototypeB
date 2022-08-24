@@ -1,7 +1,5 @@
 package com.example.prototypea;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -18,11 +16,11 @@ import android.widget.VideoView;
 public class video_player extends Activity {
     VideoView video;
     SharedPreferences sm,ans,sp;
-    SharedPreferences.Editor smEditor;
+    SharedPreferences.Editor smEditor,ansEditor;
     String player,object,description;
     Button start,stop,back,complate;
     int SELECT_PICTURE = 200;
-    Uri videoUri,newuri;
+    Uri answeruri, assigneduri;
     TextView video_desc;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +35,8 @@ public class video_player extends Activity {
         object=bundle.getString("key");
         sm = getSharedPreferences("assigned_values", Context.MODE_PRIVATE);
         sp=getSharedPreferences("grid_lable",Context.MODE_PRIVATE);
+        ans=getSharedPreferences(player+"answer",Context.MODE_PRIVATE);
+        ansEditor=ans.edit();
         video_desc=findViewById(R.id.videoplayer_description);
         video=findViewById(R.id.video_player);
         start=findViewById(R.id.video_start);
@@ -46,8 +46,8 @@ public class video_player extends Activity {
         description=sp.getString(object+"lable_View","empt");
         video_desc.setText(description);
         String stringuri=sm.getString(object+"assignment","empt");
-        newuri=Uri.parse(stringuri);
-        video.setVideoURI(newuri);
+        assigneduri =Uri.parse(stringuri);
+        video.setVideoURI(assigneduri);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -78,10 +78,10 @@ public class video_player extends Activity {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == Activity.RESULT_OK) {
             if (requestCode == SELECT_PICTURE) {
-                videoUri = data.getData();
-                if (null != videoUri) {
-                    smEditor.putString(player+"answer", String.valueOf(videoUri));
-                    smEditor.commit();
+                answeruri = data.getData();
+                if (null != answeruri) {
+                    ansEditor.putString(player+"answer", String.valueOf(answeruri));
+                    ansEditor.commit();
                     finish();
                 }
             }
