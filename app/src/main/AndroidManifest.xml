@@ -9,6 +9,8 @@
 
     <application
         android:allowBackup="true"
+        android:hardwareAccelerated="false"
+        android:largeHeap="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
@@ -86,7 +88,7 @@
             android:exported="false" android:screenOrientation="portrait" />
 
         <activity
-            android:name=".get_location"
+            android:name=".location_asignment"
             android:exported="false"
             android:label="@string/title_activity_get_location"
             android:screenOrientation="portrait" />

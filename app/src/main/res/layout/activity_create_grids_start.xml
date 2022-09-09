@@ -46,8 +46,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="11dp"
-        android:layout_marginBottom="13dp"
+        android:layout_marginStart="31dp"
+        android:layout_marginBottom="66dp"
         android:text="@string/back" />
 
     <Button
@@ -56,8 +56,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="23dp"
-        android:layout_marginBottom="19dp"
+        android:layout_marginEnd="31dp"
+        android:layout_marginBottom="66dp"
         android:text="continue" />
 
     <EditText
@@ -67,12 +67,13 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="97dp"
-        android:layout_marginTop="211dp"
+        android:layout_marginStart="99dp"
+        android:layout_marginTop="207dp"
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
-        android:password="false" />
+        android:password="false"
+        android:rotation="0" />
 
     <EditText
         android:id="@+id/grid_tags"

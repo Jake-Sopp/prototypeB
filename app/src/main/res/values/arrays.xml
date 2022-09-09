@@ -3,11 +3,10 @@
         <string-array name="Grid_sizes">
             <item>2*2</item>
             <item>2*3</item>
-            <item>2*4</item>
-            <item>2*5</item>
+            <item>3*3</item>
         </string-array>
         <string-array name="Image_select">
-            <item>rowlet</item>
+            <item>owl</item>
             <item>door</item>
             <item>camera</item>
         </string-array>

@@ -116,8 +116,6 @@ public class grid_2x2_asignments extends AppCompatActivity {
                 imageeditor.putString(object+"image",value);
             }
             if (requestCode==2 || requestCode==3){
-                String testa=sm.getString(object+"assignment","dave");
-                test.setText(testa);
                 Intent j = new Intent(grid_2x2_asignments.this,custom_icon.class);
                 j.putExtra("key",object);
                 startActivityForResult(j,10);
@@ -128,11 +126,11 @@ public class grid_2x2_asignments extends AppCompatActivity {
     }
     private void assigments() {
         String object_type = object+"type";
-        TextView test=findViewById(R.id.select_values);
+        //TextView test=findViewById(R.id.select_values);
         type=sp.getString(object_type,"test");
         smeditor.putString(object_type,type);
         if (lable_switch.isChecked()==true){
-            Intent j = new Intent(grid_2x2_asignments.this,custom_icon.class);
+            Intent j = new Intent(this,custom_icon.class);
             j.putExtra("key",object);
             startActivityForResult(j,10);
         }
@@ -143,7 +141,7 @@ public class grid_2x2_asignments extends AppCompatActivity {
                 startActivityForResult(i, 1);
             }
             if (type.equals("gps")) {
-                Intent i = new Intent(this, get_location.class);
+                Intent i = new Intent(this, location_asignment.class);
                 i.putExtra("key", object);
                 startActivityForResult(i, 2);
             }

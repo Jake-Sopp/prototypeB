@@ -24,7 +24,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnSuccessListener;
 
-public class get_location extends FragmentActivity implements OnMapReadyCallback {
+public class location_asignment extends FragmentActivity implements OnMapReadyCallback {
     SharedPreferences sm;
     SharedPreferences.Editor smeditor;
     private GoogleMap mMap;
