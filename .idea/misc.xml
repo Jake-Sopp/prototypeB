@@ -3,7 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/user/AndroidStudioProjects/prototypeA/app/src/main/res/drawable/btn_custom.xml" value="0.1" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/prototypeA/app/src/main/res/drawable/et_custom.xml" value="0.1" />
         <entry key="..\:/Users/user/AndroidStudioProjects/prototypeA/app/src/main/res/drawable/grid2x2button.xml" value="0.22" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/prototypeA/app/src/main/res/drawable/ic_arrow_left.xml" value="0.1" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/prototypeA/app/src/main/res/drawable/ic_arrow_right.xml" value="0.1" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/prototypeA/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="..\:/Users/user/AndroidStudioProjects/prototypeA/app/src/main/res/drawable/round_button.xml" value="0.1" />
         <entry key="..\:/Users/user/AndroidStudioProjects/prototypeA/app/src/main/res/layout/activity_account_deleteion_sucess.xml" value="0.1" />
         <entry key="..\:/Users/user/AndroidStudioProjects/prototypeA/app/src/main/res/layout/activity_account_deletion.xml" value="0.2" />
@@ -11,6 +16,7 @@
         <entry key="..\:/Users/user/AndroidStudioProjects/prototypeA/app/src/main/res/layout/activity_admin_grid2x2.xml" value="0.15" />
         <entry key="..\:/Users/user/AndroidStudioProjects/prototypeA/app/src/main/res/layout/activity_assigment_photo.xml" value="0.2" />
         <entry key="..\:/Users/user/AndroidStudioProjects/prototypeA/app/src/main/res/layout/activity_assigment_popup.xml" value="0.1" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/prototypeA/app/src/main/res/layout/activity_btn_custom.xml" value="0.1" />
         <entry key="..\:/Users/user/AndroidStudioProjects/prototypeA/app/src/main/res/layout/activity_create_grids_start.xml" value="0.25" />
         <entry key="..\:/Users/user/AndroidStudioProjects/prototypeA/app/src/main/res/layout/activity_custom_icon.xml" value="0.22" />
         <entry key="..\:/Users/user/AndroidStudioProjects/prototypeA/app/src/main/res/layout/activity_get_location.xml" value="0.20416666666666666" />
@@ -36,6 +42,9 @@
         <entry key="..\:/Users/user/AndroidStudioProjects/prototypeA/app/src/main/res/layout/activity_view_grids.xml" value="0.25" />
         <entry key="..\:/Users/user/AndroidStudioProjects/prototypeA/app/src/main/res/layout/activity_view_grids2.xml" value="0.1408514492753623" />
         <entry key="..\:/Users/user/AndroidStudioProjects/prototypeA/app/src/main/res/layout/assigment_photo.xml" value="0.1" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/prototypeA/app/src/main/res/layout/btn_custom.xml" value="0.1" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/prototypeA/app/src/main/res/layout/fragment_login.xml" value="0.1" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/prototypeA/app/src/main/res/layout/fragment_register.xml" value="0.1" />
         <entry key="..\:/Users/user/AndroidStudioProjects/prototypeA/app/src/main/res/layout/home.xml" value="0.2" />
         <entry key="..\:/Users/user/AndroidStudioProjects/prototypeA/app/src/main/res/layout/newgridselection.xml" value="0.1" />
         <entry key="..\:/Users/user/AndroidStudioProjects/prototypeA/app/src/main/res/layout/photo.xml" value="0.1" />

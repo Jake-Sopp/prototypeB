@@ -12,6 +12,9 @@
     <color name="colorAccent">#D81B60</color>
     <color name="round_button_color">#D3D3D3</color>
     <color name="round_gradient_button_start_color">#DC2424</color>
+    <color name="colorPrimary2">#00796b</color>
+    <color name="colorPrimaryDark2">#00695C</color>
+    <color name="colorAccent2">#FF4081</color>
     <color name="round_gradient_button_end_color">#4A569D</color>
     <color name="pink">#FD9AFF</color>
 </resources>

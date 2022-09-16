@@ -3,18 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.prototypea">
 
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:allowBackup="true"
-        android:hardwareAccelerated="false"
-        android:largeHeap="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
+        android:hardwareAccelerated="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PrototypeA"
@@ -22,7 +22,7 @@
         <activity
             android:name=".lable_add"
             android:exported="false"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 
@@ -46,7 +46,7 @@
         <activity
             android:name=".account_deleteion_sucess"
             android:exported="false"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Account_deletion"
             android:exported="false"
@@ -58,8 +58,8 @@
         <activity
             android:name=".custom_icon"
             android:exported="false"
-            android:theme="@style/popup_theme"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/popup_theme" />
         <activity
             android:name=".photo_check"
             android:exported="false"
@@ -67,13 +67,13 @@
         <activity
             android:name=".image_viewer"
             android:exported="false"
-            android:theme="@style/popup_theme"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/popup_theme" />
         <activity
             android:name=".video_assinment"
             android:exported="false"
-            android:theme="@style/popup_theme"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/popup_theme" />
         <activity
             android:name=".player_2x2_grid"
             android:exported="false"
@@ -81,12 +81,12 @@
         <activity
             android:name=".video_player"
             android:exported="false"
-            android:theme="@style/popup_theme"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/popup_theme" />
         <activity
             android:name=".join_grids"
-            android:exported="false" android:screenOrientation="portrait" />
-
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".location_asignment"
             android:exported="false"
@@ -95,8 +95,8 @@
         <activity
             android:name=".assigment_photo"
             android:exported="false"
-            android:theme="@style/popup_theme"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/popup_theme" />
         <activity
             android:name=".grid_2x2_asignments"
             android:exported="false"
@@ -112,8 +112,8 @@
         <activity
             android:name=".grid_player_select"
             android:exported="false"
-            android:theme="@style/popup_theme"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/popup_theme" />
         <activity
             android:name=".test_screen"
             android:exported="false"
@@ -133,22 +133,27 @@
         <activity
             android:name=".home"
             android:exported="true"
-            android:screenOrientation="portrait" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:screenOrientation="portrait">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".newgridoption"
-            android:theme="@style/popup_theme"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/popup_theme" />
         <activity
             android:name=".view_grids_page"
             android:exported="false"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".LoginMain"
+            android:exported="true"
+            android:screenOrientation="portrait">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
     </application>
 
 </manifest>
-    <!-- TODO, add download feature(in works,URL modle created), fix any bugs, add datebase, add login,change methods in all assignment and answer to use database when implemented,add other sizes,method to reset grid-->
